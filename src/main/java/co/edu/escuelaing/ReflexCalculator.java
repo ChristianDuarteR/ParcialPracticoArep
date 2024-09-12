@@ -22,14 +22,14 @@ public class ReflexCalculator {
                 String name = met.getName();
                 if (name.equals(operation)){
                     if (numsToUse.isEmpty()) {
-                        met.invoke(met.getName());
+                        return (String) met.invoke(met.getName());
                     }
                     else if (numsToUse.size() == 1) {
-                        met.invoke(nums.get(0));
+                        return (String) met.invoke(nums.get(0));
                     }else if (numsToUse.size() == 2){
-                        met.invoke(nums.get(0), nums.get(1));
+                        return (String) met.invoke(nums.get(0), nums.get(1));
                     } else {
-                        met.invoke(nums.get(0), nums.get(1), nums.get(2));
+                        return (String) met.invoke(nums.get(0), nums.get(1), nums.get(2));
                     }
                 }
             }
